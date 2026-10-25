@@ -1,0 +1,8 @@
+# Installed local-environment versions; not a proven original-run lockfile.
+matplotlib==3.11.2
+networkx==3.6.1
+numpy==2.4.6
+openpyxl==3.1.5
+pandas==3.0.6
+scipy==1.17.1
+seaborn==0.13.2

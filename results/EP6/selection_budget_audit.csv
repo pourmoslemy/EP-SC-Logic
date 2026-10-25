@@ -1,0 +1,5 @@
+tau,requested_budget_seconds,required_final_window_budget_seconds,final_window_guard_passed,status,d_lower,d_upper
+0.58,0.5,10.0,False,exact,151,151
+0.6,0.5,10.0,False,exact,104,104
+0.62,0.5,10.0,False,exact,55,55
+0.64,0.5,10.0,False,exact,35,35

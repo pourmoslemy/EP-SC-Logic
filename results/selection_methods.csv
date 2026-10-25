@@ -1,0 +1,3 @@
+stage,method
+initial_budget_placement,"Preliminary greedy drop before exact searches; expanded window, plus fixed 0.38-0.52"
+final_selection,"Largest exact consecutive depth drop among certified steps; if competitor lower bounds permit a larger drop, flag global maximum unverified; greedy fallback only if no certified step"

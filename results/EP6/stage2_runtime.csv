@@ -1,0 +1,4 @@
+script,seconds,exit_code,seed
+run_null_ep9.py,1465.906314899912,0,42
+validate_methods_local.py,2.0443542001303285,0,42
+validate_results.py,5.8853025999851525,0,42

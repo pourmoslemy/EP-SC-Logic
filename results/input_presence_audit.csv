@@ -1,0 +1,7 @@
+metric,value,definition
+EP6 packed_vs_physical_Yes_disagreements,0,Current packed Yes vs independently reconstructed physical coordinates; same member/vote IDs
+EP9_stored_vote_cells,10915249,"Physical vote cell has a nonempty raw value; may encode absent/not-voting, NOT presence"
+EP9_present_cells,9175355,"Raw physical code 1 Yes, 2 No or 3 Abstain only"
+EP9_stored_but_not_present,1739894,"Stored raw code outside 1,2,3; not in co-presence denominator"
+EP9_present_without_stored_cell,0,Must be zero
+UNKNOWN_members,2,"Single separate UNKNOWN group, not NI; both members have zero present votes"

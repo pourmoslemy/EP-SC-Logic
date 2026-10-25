@@ -1,0 +1,111 @@
+check,passed
+taus exactly approved six,True
+N1000 and seed42,True
+"6000 null rows, 1000 replicas",True
+no duplicate replicate/tau pairs,True
+checkpoint completed1000,True
+0.4 null timeout count,True
+0.4 null exact+timeout=1000,True
+0.4 ordered and populated bounds,True
+0.4 timeout never exact,True
+0.4 exact independent pQ,True
+0.4 exact independent depth interval,True
+0.4 ambiguity count,True
+0.44 null timeout count,True
+0.44 null exact+timeout=1000,True
+0.44 ordered and populated bounds,True
+0.44 timeout never exact,True
+0.44 exact independent pQ,True
+0.44 exact independent depth interval,True
+0.44 ambiguity count,True
+0.46 null timeout count,True
+0.46 null exact+timeout=1000,True
+0.46 ordered and populated bounds,True
+0.46 timeout never exact,True
+0.46 exact independent pQ,True
+0.46 exact independent depth interval,True
+0.46 ambiguity count,True
+0.5 null timeout count,True
+0.5 null exact+timeout=1000,True
+0.5 ordered and populated bounds,True
+0.5 timeout never exact,True
+0.5 exact independent pQ,True
+0.5 exact independent depth interval,True
+0.5 ambiguity count,True
+0.6 null timeout count,True
+0.6 null exact+timeout=1000,True
+0.6 ordered and populated bounds,True
+0.6 timeout never exact,True
+0.6 exact independent pQ,True
+0.6 exact independent depth interval,True
+0.6 ambiguity count,True
+0.62 null timeout count,True
+0.62 null exact+timeout=1000,True
+0.62 ordered and populated bounds,True
+0.62 timeout never exact,True
+0.62 exact independent pQ,True
+0.62 exact independent depth interval,True
+0.62 ambiguity count,True
+preserved input_EP6_fixed.npz,True
+preserved observed.csv,True
+preserved mesh.csv,True
+preserved density_at_050.csv,True
+preserved main_steps.csv,True
+preserved main_steps_initial_greedy.csv,True
+preserved selection_budget_audit.csv,True
+preserved selection_methods.csv,True
+preserved refine_selection.py,True
+preserved validation_failures.csv,True
+preserved common.py,True
+preserved run_null_ep9.py,True
+preserved validate_results.py,True
+preserved validate_methods_local.py,True
+preserved ../results_v3_EP6.zip,True
+preserved results_v3\audit_bootstrap_depth.py,True
+preserved results_v3\before_after_fix.csv,True
+preserved results_v3\bootstrap_CI.csv,True
+preserved results_v3\bootstrap_depth_approximation_audit.csv,True
+preserved results_v3\bootstrap_draws_EP9_fixed_100.csv,True
+preserved results_v3\bootstrap_draws_EP9_fixed_20.csv,True
+preserved results_v3\bootstrap_draws_EP9_fixed_50.csv,True
+preserved results_v3\bootstrap_order_EP9.csv,True
+preserved results_v3\bootstrap_point.csv,True
+preserved results_v3\bootstrap_sizes_EP9_fixed_100.csv,True
+preserved results_v3\bootstrap_sizes_EP9_fixed_20.csv,True
+preserved results_v3\bootstrap_sizes_EP9_fixed_50.csv,True
+preserved results_v3\common.py,True
+preserved results_v3\density_at_050.csv,True
+preserved results_v3\depth_searches.csv,True
+preserved results_v3\failures.csv,True
+preserved results_v3\finalize_outputs.py,True
+preserved results_v3\input_presence_audit.csv,True
+preserved results_v3\main_steps.csv,True
+preserved results_v3\main_steps_initial_greedy.csv,True
+preserved results_v3\mesh.csv,True
+preserved results_v3\methods.csv,True
+preserved results_v3\null_draws.csv,True
+preserved results_v3\null_joint.csv,True
+preserved results_v3\null_party_preservation.csv,True
+preserved results_v3\null_pvalues.csv,True
+preserved results_v3\null_rng_state.csv,True
+preserved results_v3\null_step_draws.csv,True
+preserved results_v3\observed.csv,True
+preserved results_v3\output_manifest.csv,True
+preserved results_v3\output_validation.csv,True
+preserved results_v3\party_groups.csv,True
+preserved results_v3\refine_selection.py,True
+preserved results_v3\report_results.py,True
+preserved results_v3\run_bootstrap_ep9.py,True
+preserved results_v3\run_log.csv,True
+preserved results_v3\run_null_ep9.py,True
+preserved results_v3\run_observed.py,True
+preserved results_v3\selection_methods.csv,True
+preserved results_v3\source_fingerprints.csv,True
+preserved results_v3\step_status.csv,True
+preserved results_v3\summary.md,True
+preserved results_v3\unit_validation.csv,True
+preserved results_v3\validate_methods_local.py,True
+preserved results_v3\validate_results.py,True
+null script hash unchanged,True
+bootstrap skipped,True
+HNS skipped,True

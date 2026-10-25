@@ -1,0 +1,109 @@
+check,passed
+observed 3 minima by 41 rows,True
+mesh 81+41+17 rows,True
+observed all timeouts have both bounds,True
+observed bound ordering,True
+observed timeout is not exact,True
+observed exact bounds agree,True
+"observed (10,) monotone certified depth",True
+"observed (10,) all deltaQ",True
+"observed (10,) requested regional budget",True
+"observed (20,) monotone certified depth",True
+"observed (20,) all deltaQ",True
+"observed (20,) requested regional budget",True
+"observed (50,) monotone certified depth",True
+"observed (50,) all deltaQ",True
+"observed (50,) requested regional budget",True
+mesh all timeouts have both bounds,True
+mesh bound ordering,True
+mesh timeout is not exact,True
+mesh exact bounds agree,True
+"mesh (0.01,) monotone certified depth",True
+"mesh (0.01,) all deltaQ",True
+"mesh (0.01,) requested regional budget",True
+"mesh (0.02,) monotone certified depth",True
+"mesh (0.02,) all deltaQ",True
+"mesh (0.02,) requested regional budget",True
+"mesh (0.05,) monotone certified depth",True
+"mesh (0.05,) all deltaQ",True
+"mesh (0.05,) requested regional budget",True
+mesh 0.01 selection largest certified step,True
+mesh 0.02 selection largest certified step,True
+mesh 0.02 GLOBAL certificate,True
+mesh 0.05 selection largest certified step,True
+mesh 0.05 GLOBAL certificate,True
+"pair 203,425 co-presence",True
+"pair 203,425 co-Yes",True
+"pair 35,509 co-presence",True
+"pair 35,509 co-Yes",True
+"pair 425,477 co-presence",True
+"pair 425,477 co-Yes",True
+"pair 252,683 co-presence",True
+"pair 252,683 co-Yes",True
+"pair 334,397 co-presence",True
+"pair 334,397 co-Yes",True
+"pair 505,721 co-presence",True
+"pair 505,721 co-Yes",True
+"pair 37,47 co-presence",True
+"pair 37,47 co-Yes",True
+"pair 200,323 co-presence",True
+"pair 200,323 co-Yes",True
+"pair 39,123 co-presence",True
+"pair 39,123 co-Yes",True
+"pair 364,642 co-presence",True
+"pair 364,642 co-Yes",True
+"pair 683,805 co-presence",True
+"pair 683,805 co-Yes",True
+"pair 86,255 co-presence",True
+"pair 86,255 co-Yes",True
+Q 0.42 vs independent networkx,True
+edges 0.42 vs direct threshold,True
+Q 0.44 vs independent networkx,True
+edges 0.44 vs direct threshold,True
+Q 0.5 vs independent networkx,True
+edges 0.5 vs direct threshold,True
+null 0.4 1000 unique draws,True
+null 0.4 pQ recomputed,True
+null 0.4 pd bounds recomputed,True
+null 0.4 ambiguous recomputed,True
+null 0.42 1000 unique draws,True
+null 0.42 pQ recomputed,True
+null 0.42 pd bounds recomputed,True
+null 0.42 ambiguous recomputed,True
+null 0.44 1000 unique draws,True
+null 0.44 pQ recomputed,True
+null 0.44 pd bounds recomputed,True
+null 0.44 ambiguous recomputed,True
+null 0.46 1000 unique draws,True
+null 0.46 pQ recomputed,True
+null 0.46 pd bounds recomputed,True
+null 0.46 ambiguous recomputed,True
+null 0.5 1000 unique draws,True
+null 0.5 pQ recomputed,True
+null 0.5 pd bounds recomputed,True
+null 0.5 ambiguous recomputed,True
+UNKNOWN group distinct from NI,True
+EP6 Yes disagreement independently rechecked,True
+stored cells NOT presence,True
+complete bootstrap CI row count,True
+L20 2000 unique bootstrap draws,True
+L20 pearson_approx_d percentile CI,True
+L20 spearman_approx_d percentile CI,True
+L20 delta_Q percentile CI,True
+L20 delta_d_approx percentile CI,True
+L20 delta_Q_at_legacy_step percentile CI,True
+L20 delta_d_approx_at_legacy_step percentile CI,True
+L50 2000 unique bootstrap draws,True
+L50 pearson_approx_d percentile CI,True
+L50 spearman_approx_d percentile CI,True
+L50 delta_Q percentile CI,True
+L50 delta_d_approx percentile CI,True
+L50 delta_Q_at_legacy_step percentile CI,True
+L50 delta_d_approx_at_legacy_step percentile CI,True
+L100 2000 unique bootstrap draws,True
+L100 pearson_approx_d percentile CI,True
+L100 spearman_approx_d percentile CI,True
+L100 delta_Q percentile CI,True
+L100 delta_d_approx percentile CI,True
+L100 delta_Q_at_legacy_step percentile CI,True
+L100 delta_d_approx_at_legacy_step percentile CI,True

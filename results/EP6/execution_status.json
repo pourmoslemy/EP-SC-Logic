@@ -1,0 +1,27 @@
+{
+  "stage0": "complete",
+  "stage1": "complete_with_refinement_guard_failure",
+  "stage1_timeouts": 17,
+  "gate_requires_approval": false,
+  "stage2": "complete",
+  "stage3": "skipped_by_instruction",
+  "seed": 42,
+  "validation_failures": [
+    {
+      "item": "refine_selection.py",
+      "exit_code": 1
+    }
+  ],
+  "stage2_N": 1000,
+  "stage2_seed": 42,
+  "stage2_taus": [
+    0.4,
+    0.44,
+    0.46,
+    0.5,
+    0.6,
+    0.62
+  ],
+  "stage1_gate_triggered": true,
+  "stage2_approved_after_gate": true
+}

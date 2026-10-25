@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.npz
+*.npy
+*.pkl
+*.xlsx
+*.zip
+private/
+_cache/

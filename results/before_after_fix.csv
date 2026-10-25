@@ -1,0 +1,9 @@
+quantity,before,after
+Main .02-grid drop,"0.44->0.46 (greedy, unverified)",0.42->0.44 (certified_global_drop)
+delta Q at own selected step,0.0189224,0.0116323
+p_Q at own after-step,0.00497512,0.000999001
+"p_d [lower,upper] at own after-step","[1, 1]","[1, 1]"
+pearson_approx_d CI95% (L50),"[-0.616214, 0.220349]","[-0.614798, 0.226416]"
+spearman_approx_d CI95% (L50),"[-0.536308, 0.112694]","[-0.534703, 0.112423]"
+delta_Q CI95% (L50),"[0.00952293, 0.0413382]","[0.00281947, 0.020088]"
+delta_d_approx CI95% (L50),"[-39, -9]","[-72, -6]"

@@ -1,0 +1,9 @@
+metric,value,definition
+EP6 packed_vs_physical_Yes_disagreements_before,0,Stored packed alignment versus independent physical coordinates; shared IDs
+EP6 fixed_vs_physical_Yes_disagreements_after,0,Fixed Yes versus independent physical coordinates
+EP6_roll_calls,6199,Physical vote-ID columns in raw EP6 workbook
+EP6_stored_vote_cells,5827060,Nonempty physical raw cell; NOT presence
+EP6_present_cells,3761021,"Raw Yes/No/Abstain only, codes 1/2/3"
+EP6_stored_but_not_present,2066039,Nonempty absent/not-voting code; excluded from co-presence
+EP6_present_without_stored_cell,0,Must be zero
+UNKNOWN_members,0,UNKNOWN remains separate from NI

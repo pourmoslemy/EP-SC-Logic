@@ -1,0 +1,21 @@
+key,value
+seed,42
+omega,"co-Yes / co-present (Yes,No,Abstain), minimum=20; observed sensitivities 10,50"
+observed_depth_budget,10s at 0.38-0.52 and +/-0.02 of selected .02-grid step; 0.5s elsewhere
+selection,"Preliminary greedy budget placement; final largest certified exact step, globally certified only if competing delta lower bounds exclude a larger drop; see selection_methods.csv"
+null_draws,1000
+null_seed,42
+null_depth_budget_seconds,0.12
+null_depth_budget_scope,"Observed enhanced budget is step 1; null retains previous 0.12s bounded exact search per graph, no clique cap; p_d bounds handle ambiguity"
+null_unknown,"2 inactive UNKNOWN members retained together as own group, distinct from NI"
+presence,"states in {1,2,3}; NEVER stored_vote_cells"
+bootstrap_reps,2000
+bootstrap_lengths,"20,50,100"
+bootstrap_depth,Approximate uncapped fixed-order greedy lower-bound envelope; not exact depth
+density_denominator,"811 choose 2, all cohort members including isolates; active nodes reported separately"
+Q_when_edgeless,Q=0 by explicit computational convention
+p_value_formula,"(1+count(null >= observed))/(1000+1); Q tolerance 1e-12, d bounds and ambiguous comparisons explicit"
+stored_vote_cells_definition,"True iff physical raw vote value is nonempty numeric; not a presence or missingness mask; codes 0,4,5,6 are NOT present"
+EP6_Yes_alignment_disagreements,0 on all shared cached member/vote IDs
+bootstrap_CI_method,Percentile 0.025 and 0.975 over 2000 full-pair block resamples; approximate-depth intervals are NOT exact-depth intervals
+timeout_reproducibility,"Exact results deterministic; timeout bounds may depend on wall-clock scheduling/hardware. Per-graph budgets, elapsed seconds and certified bounds retained."

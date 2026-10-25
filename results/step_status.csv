@@ -1,0 +1,4 @@
+stage,status,detail
+1 observed and mesh,complete,Fixed EP9; minima 10/20/50 observed; mesh 0.01/0.02/0.05 at min20
+3 party-aware null,complete,1000/1000 draws; fixed labels; separate UNKNOWN group; bounded exact searches
+2 block bootstrap,complete,"18/18 CI rows; 2000 reps, L=20/50/100; approximate depth"

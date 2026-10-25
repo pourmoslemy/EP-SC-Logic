@@ -1,0 +1,437 @@
+[
+  {
+    "path": "paper/paper_EU_v11.tex",
+    "source": "elsevier_submission/paper_EU_v11.tex",
+    "md5": "5576665f5d236e53350357f879f5a92d"
+  },
+  {
+    "path": "paper/references_v5.bib",
+    "source": "elsevier_submission/references_v5.bib",
+    "md5": "6988a64991fe07fca7596ab8f95f94f2"
+  },
+  {
+    "path": "paper/sc_logic_figures/ep_depth_Q_v8.pdf",
+    "source": "elsevier_submission/sc_logic_figures/ep_depth_Q_v8.pdf",
+    "md5": "02d6c4f694fc63c71afa4f25f1084951"
+  },
+  {
+    "path": "paper/sc_logic_figures/ep_hns_artifact_audit.pdf",
+    "source": "elsevier_submission/sc_logic_figures/ep_hns_artifact_audit.pdf",
+    "md5": "46385140b1fd8bfd7920b5145f7020fe"
+  },
+  {
+    "path": "paper/sc_logic_figures/ep_local_v8.pdf",
+    "source": "elsevier_submission/sc_logic_figures/ep_local_v8.pdf",
+    "md5": "f9a558862fcbe23fa2d564a82d27b464"
+  },
+  {
+    "path": "paper/sc_logic_figures/fig5_null_model_dmax_ep6_legacy.pdf",
+    "source": "elsevier_submission/sc_logic_figures/fig5_null_model_dmax_ep6_legacy.pdf",
+    "md5": "e0d8a8bebc619ac1375e703017716cf4"
+  },
+  {
+    "path": "paper/cas-sc.cls",
+    "source": "elsevier_submission/cas-sc.cls",
+    "md5": "65b518b1d7581e9c4ebe84b81471ee59"
+  },
+  {
+    "path": "paper/cas-common.sty",
+    "source": "elsevier_submission/cas-common.sty",
+    "md5": "c602be3da196cb506acc84d1fa26b134"
+  },
+  {
+    "path": "paper/cas-model2-names.bst",
+    "source": "elsevier_submission/cas-model2-names.bst",
+    "md5": "28b630660245c09f173aac55be552b29"
+  },
+  {
+    "path": "paper/thumbnails/cas-email.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-email.jpeg",
+    "md5": "ae276cc9956197082d008c18ae4cbb28"
+  },
+  {
+    "path": "paper/thumbnails/cas-facebook.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-facebook.jpeg",
+    "md5": "e8bdda207ff3067256c9970ffe343313"
+  },
+  {
+    "path": "paper/thumbnails/cas-gplus.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-gplus.jpeg",
+    "md5": "0ec7ed2498654bd3b8ecd8eb9bb82890"
+  },
+  {
+    "path": "paper/thumbnails/cas-linkedin.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-linkedin.jpeg",
+    "md5": "b995ad7dc911a8687e33f17bcfd9a6e0"
+  },
+  {
+    "path": "paper/thumbnails/cas-twitter.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-twitter.jpeg",
+    "md5": "bb2daef1c15f7aa2fc391f3405c3a1fe"
+  },
+  {
+    "path": "paper/thumbnails/cas-url.jpeg",
+    "source": "elsevier_submission/thumbnails/cas-url.jpeg",
+    "md5": "ef75ae5d7195a5176d102b6aea09b729"
+  },
+  {
+    "path": "code/ep_experiments/compute_ep_ci2_robustness.py",
+    "source": "EU/ep_experiments/compute_ep_ci2_robustness.py",
+    "md5": "2df8581d1aaec3e7a0c810a161cb6d1e"
+  },
+  {
+    "path": "code/ep_experiments/compute_ep_hns.py",
+    "source": "EU/ep_experiments/compute_ep_hns.py",
+    "md5": "cd736065f6258196519addaaf2e06dd3"
+  },
+  {
+    "path": "code/ep_experiments/ep_topological_pipeline.py",
+    "source": "EU/ep_experiments/ep_topological_pipeline.py",
+    "md5": "611cb51a4402345e8a42f09b09b80728"
+  },
+  {
+    "path": "code/ep_experiments/results/analysis_core.py",
+    "source": "EU/ep_experiments/results/analysis_core.py",
+    "md5": "41462031878dee86b5b8e56d850d2367"
+  },
+  {
+    "path": "code/ep_experiments/results/audit_inputs.py",
+    "source": "EU/ep_experiments/results/audit_inputs.py",
+    "md5": "ad66a31290bd4d5feb763e4e80f75141"
+  },
+  {
+    "path": "code/ep_experiments/results/audit_metadata.py",
+    "source": "EU/ep_experiments/results/audit_metadata.py",
+    "md5": "b3758afb71282e8f49863bd0799f409e"
+  },
+  {
+    "path": "code/ep_experiments/results/bootstrap_core.py",
+    "source": "EU/ep_experiments/results/bootstrap_core.py",
+    "md5": "56e4921889a1bb8022a2011771baccdd"
+  },
+  {
+    "path": "code/ep_experiments/results/postprocess.py",
+    "source": "EU/ep_experiments/results/postprocess.py",
+    "md5": "4d663cea72f4af79de13bad92b8e20c6"
+  },
+  {
+    "path": "code/ep_experiments/results/report_results.py",
+    "source": "EU/ep_experiments/results/report_results.py",
+    "md5": "e0084810cdc4a5dfdf4a25530f455efb"
+  },
+  {
+    "path": "code/ep_experiments/results/run_bootstrap.py",
+    "source": "EU/ep_experiments/results/run_bootstrap.py",
+    "md5": "a981605c68ed43e04ca845205b7ff9a6"
+  },
+  {
+    "path": "code/ep_experiments/results/run_null.py",
+    "source": "EU/ep_experiments/results/run_null.py",
+    "md5": "e6f8b915bc0e875a84a9f6e04564246b"
+  },
+  {
+    "path": "code/ep_experiments/results/run_observed.py",
+    "source": "EU/ep_experiments/results/run_observed.py",
+    "md5": "8cd7958b40d7218b7a7b408a7cb68eb2"
+  },
+  {
+    "path": "code/ep_experiments/results/validate_methods.py",
+    "source": "EU/ep_experiments/results/validate_methods.py",
+    "md5": "a5d64385c127b23da1408cc8d9d22c05"
+  },
+  {
+    "path": "code/ep_experiments/results/validate_outputs.py",
+    "source": "EU/ep_experiments/results/validate_outputs.py",
+    "md5": "196b701c9b59ad5a01d898f2c758364e"
+  },
+  {
+    "path": "code/ep_experiments/results_v2/fix_ep9_input.py",
+    "source": "EU/ep_experiments/results_v2/fix_ep9_input.py",
+    "md5": "23c657c74947107411cd06f7cf8911d3"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/audit_bootstrap_depth.py",
+    "source": "EU/ep_experiments/results_v3/audit_bootstrap_depth.py",
+    "md5": "f272ffe606de7e9447ee26e4207d11c8"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/common.py",
+    "source": "EU/ep_experiments/results_v3/common.py",
+    "md5": "beacd24833cb251220cd9cccc5ed3562"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/finalize_outputs.py",
+    "source": "EU/ep_experiments/results_v3/finalize_outputs.py",
+    "md5": "1dbf0dcbbee8d88ee39c8bf676230550"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/refine_selection.py",
+    "source": "EU/ep_experiments/results_v3/refine_selection.py",
+    "md5": "12474eb5bda9bc33da8d13c5eba8d873"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/run_bootstrap_ep9.py",
+    "source": "EU/ep_experiments/results_v3/run_bootstrap_ep9.py",
+    "md5": "021ba9eb45c55a1168e01a652956e105"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/run_null_ep9.py",
+    "source": "EU/ep_experiments/results_v3/run_null_ep9.py",
+    "md5": "c3ca7cbb4f9ce3d93181052d2a5d16a7"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/run_observed.py",
+    "source": "EU/ep_experiments/results_v3/run_observed.py",
+    "md5": "a878b724c4ad59c12407d93dd4273ec2"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/validate_methods_local.py",
+    "source": "EU/ep_experiments/results_v3/validate_methods_local.py",
+    "md5": "43ca2f7a885bf6cdefe7ac6ce4bdde63"
+  },
+  {
+    "path": "code/ep_experiments/results_v3/validate_results.py",
+    "source": "EU/ep_experiments/results_v3/validate_results.py",
+    "md5": "b3e44e74c770670b4a995a9acc126ebc"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/build_input.py",
+    "source": "EU/ep_experiments/results_v3_EP6/build_input.py",
+    "md5": "9a93156de83f1161bcbe00414c81bbef"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/common.py",
+    "source": "EU/ep_experiments/results_v3_EP6/common.py",
+    "md5": "0238deeb53e8a0380a97dfb916fb2d5a"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/refine_selection.py",
+    "source": "EU/ep_experiments/results_v3_EP6/refine_selection.py",
+    "md5": "d988363a228647b75150e38fd0b3031f"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/run_null_ep9.py",
+    "source": "EU/ep_experiments/results_v3_EP6/run_null_ep9.py",
+    "md5": "e4daf07b4f6c0b206569b96f5f233f9a"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/run_observed.py",
+    "source": "EU/ep_experiments/results_v3_EP6/run_observed.py",
+    "md5": "844c44cafc8ffb6db00fb55eceb35bfb"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/validate_methods_local.py",
+    "source": "EU/ep_experiments/results_v3_EP6/validate_methods_local.py",
+    "md5": "43ca2f7a885bf6cdefe7ac6ce4bdde63"
+  },
+  {
+    "path": "code/ep_experiments/results_v3_EP6/validate_results.py",
+    "source": "EU/ep_experiments/results_v3_EP6/validate_results.py",
+    "md5": "b1b0902e0b434123a07a4946403ad31d"
+  },
+  {
+    "path": "results/observed.csv",
+    "source": "EU/ep_experiments/results_v3/observed.csv",
+    "md5": "1680d03ca560f0b913690700f1232a46"
+  },
+  {
+    "path": "results/main_steps.csv",
+    "source": "EU/ep_experiments/results_v3/main_steps.csv",
+    "md5": "f96518f369e9b997c167099365434a54"
+  },
+  {
+    "path": "results/main_steps_initial_greedy.csv",
+    "source": "EU/ep_experiments/results_v3/main_steps_initial_greedy.csv",
+    "md5": "1adcb43aff999c1fd85ba19c12821868"
+  },
+  {
+    "path": "results/density_at_050.csv",
+    "source": "EU/ep_experiments/results_v3/density_at_050.csv",
+    "md5": "21bdf66b437cda86536c7199625e0916"
+  },
+  {
+    "path": "results/mesh.csv",
+    "source": "EU/ep_experiments/results_v3/mesh.csv",
+    "md5": "27c06009d91e8321056ef644f4700ac3"
+  },
+  {
+    "path": "results/bootstrap_CI.csv",
+    "source": "EU/ep_experiments/results_v3/bootstrap_CI.csv",
+    "md5": "1910d3455f4bc1d121f437e51795fbe8"
+  },
+  {
+    "path": "results/bootstrap_point.csv",
+    "source": "EU/ep_experiments/results_v3/bootstrap_point.csv",
+    "md5": "90324b790c4d7b267c54b95647af088f"
+  },
+  {
+    "path": "results/bootstrap_depth_approximation_audit.csv",
+    "source": "EU/ep_experiments/results_v3/bootstrap_depth_approximation_audit.csv",
+    "md5": "d4cad142e47c44622ac4a3f682dac9ce"
+  },
+  {
+    "path": "results/null_pvalues.csv",
+    "source": "EU/ep_experiments/results_v3/null_pvalues.csv",
+    "md5": "af1ed40a4d02970e0ca8963fea96b862"
+  },
+  {
+    "path": "results/null_draws.csv",
+    "source": "EU/ep_experiments/results_v3/null_draws.csv",
+    "md5": "cb636fff3cc6661d000c80b38847b450"
+  },
+  {
+    "path": "results/null_joint.csv",
+    "source": "EU/ep_experiments/results_v3/null_joint.csv",
+    "md5": "24207b7fbfce41c66c67ee8eb9c7e64b"
+  },
+  {
+    "path": "results/null_step_draws.csv",
+    "source": "EU/ep_experiments/results_v3/null_step_draws.csv",
+    "md5": "453a0e9f07baf50a62637dc231e470e7"
+  },
+  {
+    "path": "results/null_rng_state.csv",
+    "source": "EU/ep_experiments/results_v3/null_rng_state.csv",
+    "md5": "ab08ccb890af170bea2dd547e03a58d7"
+  },
+  {
+    "path": "results/null_party_preservation.csv",
+    "source": "EU/ep_experiments/results_v3/null_party_preservation.csv",
+    "md5": "b24a83e4e2a28f5c9dcb0197da96e300"
+  },
+  {
+    "path": "results/output_manifest.csv",
+    "source": "EU/ep_experiments/results_v3/output_manifest.csv",
+    "md5": "bb75435042d41eebbe78826646b18282"
+  },
+  {
+    "path": "results/output_validation.csv",
+    "source": "EU/ep_experiments/results_v3/output_validation.csv",
+    "md5": "177790d35ebd06ea899d435563d450de"
+  },
+  {
+    "path": "results/unit_validation.csv",
+    "source": "EU/ep_experiments/results_v3/unit_validation.csv",
+    "md5": "8ad098181de7b855c573339b3eff97d6"
+  },
+  {
+    "path": "results/input_presence_audit.csv",
+    "source": "EU/ep_experiments/results_v3/input_presence_audit.csv",
+    "md5": "0088483b2544895cc62a2f4c39d8305e"
+  },
+  {
+    "path": "results/methods.csv",
+    "source": "EU/ep_experiments/results_v3/methods.csv",
+    "md5": "a38f618bf8bebc6a0b467b89135e1bf8"
+  },
+  {
+    "path": "results/selection_methods.csv",
+    "source": "EU/ep_experiments/results_v3/selection_methods.csv",
+    "md5": "e535a52fa36f3cf0c37331a33af57a03"
+  },
+  {
+    "path": "results/step_status.csv",
+    "source": "EU/ep_experiments/results_v3/step_status.csv",
+    "md5": "23496ae2e5d973ac47c1bc6645e89b43"
+  },
+  {
+    "path": "results/failures.csv",
+    "source": "EU/ep_experiments/results_v3/failures.csv",
+    "md5": "df30bade0429b61399bc85ac768833b8"
+  },
+  {
+    "path": "results/before_after_fix.csv",
+    "source": "EU/ep_experiments/results_v3/before_after_fix.csv",
+    "md5": "149ede24ecb879bc4497aa2bf14727f0"
+  },
+  {
+    "path": "results/EP6/observed.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/observed.csv",
+    "md5": "c36b05c26cc200269ed7da3909ecad10"
+  },
+  {
+    "path": "results/EP6/main_steps.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/main_steps.csv",
+    "md5": "2e360a77e80bc3c0a0ec6afe779dbf40"
+  },
+  {
+    "path": "results/EP6/mesh.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/mesh.csv",
+    "md5": "d1d6c90c74f5feca8e47785e96261667"
+  },
+  {
+    "path": "results/EP6/density_at_050.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/density_at_050.csv",
+    "md5": "39e3a554aef0f45163b43e4cc49a62dd"
+  },
+  {
+    "path": "results/EP6/deviations.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/deviations.csv",
+    "md5": "fc71a1bce4b00be33c62999c36dd92be"
+  },
+  {
+    "path": "results/EP6/comparison_old_new.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/comparison_old_new.csv",
+    "md5": "eb658d93adb124ffed9677878abd52b3"
+  },
+  {
+    "path": "results/EP6/execution_status.json",
+    "source": "EU/ep_experiments/results_v3_EP6/execution_status.json",
+    "md5": "e8ca90bcecdfaa50e3295c1022f393d7"
+  },
+  {
+    "path": "results/EP6/output_manifest.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/output_manifest.csv",
+    "md5": "b309bcc6e02e882e7e2ed9863367c247"
+  },
+  {
+    "path": "results/EP6/null_pvalues.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/null_pvalues.csv",
+    "md5": "e717eb99975ccf5254b1dd1571b3876b"
+  },
+  {
+    "path": "results/EP6/null_joint.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/null_joint.csv",
+    "md5": "89e1a701caaa7da9b9afd0b4daaa532d"
+  },
+  {
+    "path": "results/EP6/null_step_draws.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/null_step_draws.csv",
+    "md5": "57cbebff9b63e280b4e385a27d392deb"
+  },
+  {
+    "path": "results/EP6/null_draws.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/null_draws.csv",
+    "md5": "f6ec9e738efbeae614e09a2e156ad6a6"
+  },
+  {
+    "path": "results/EP6/null_rng_state.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/null_rng_state.csv",
+    "md5": "d48cfe458ed278250cb3004b4bf6af88"
+  },
+  {
+    "path": "results/EP6/input_presence_audit.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/input_presence_audit.csv",
+    "md5": "e95ff1b72b4039c207d55b53247a37d0"
+  },
+  {
+    "path": "results/EP6/stage2_runtime.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/stage2_runtime.csv",
+    "md5": "21229a29b62942b5eaa0759c56de318c"
+  },
+  {
+    "path": "results/EP6/validation_failures.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/validation_failures.csv",
+    "md5": "a7a028bc5bc71586ab8b99601f87c97e"
+  },
+  {
+    "path": "results/EP6/selection_budget_audit.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/selection_budget_audit.csv",
+    "md5": "1a7059750c738239d350a7a17dbbef9e"
+  },
+  {
+    "path": "results/EP6/stage2_validation.csv",
+    "source": "EU/ep_experiments/results_v3_EP6/stage2_validation.csv",
+    "md5": "244bda3d958e52826a41127f6631e3e4"
+  }
+]

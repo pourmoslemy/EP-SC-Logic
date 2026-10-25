@@ -1,0 +1,562 @@
+\documentclass[a4paper,fleqn,oneside]{cas-sc}
+
+\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{amsthm}
+\usepackage{algorithm}
+\usepackage{tabularx}
+% CAS expects key-value float options and unique hyperlink destinations.
+\hypersetup{hypertexnames=false}
+% Correct the CAS zero-width keyword overlay by adding balancing stretch.
+% This fixes the box construction without suppressing layout diagnostics.
+\ExplSyntaxOn
+\RenewDocumentEnvironment{Abstract}{o}
+{
+  \group_begin:
+  \IfNoValueTF{#1}{}{\tex_gdef:D\abstractname{#1}}
+  \parindent=0pt
+  \box_if_empty:NTF\g_stm_key_box
+    {\leftskip=.35\textwidth}
+    {
+      \dim_gset:Nn\l_tmpa_dim{\box_ht:N\g_stm_key_box}
+      \dim_gadd:Nn\l_tmpa_dim{\box_dp:N\g_stm_key_box}
+      \leftskip=.35\textwidth
+      \hspace*{-.35\textwidth}
+      \noindent\hbox_to_wd:nn{0pt}{\box\g_stm_key_box\hss}
+      \skip_vertical:n{-\l_tmpa_dim}
+    }
+  \noindent\abstractname\par
+  \skip_vertical:n{-4pt}
+  \noindent\rule{.65\textwidth}{.2pt}\par\footnotesize
+  \ignorespaces\everypar{\parindent=1.5em}
+}{\par\group_end:}
+\ExplSyntaxOff
+\renewcommand{\printorcid}{}
+
+%\usepackage{algorithmic}
+\usepackage{algpseudocode}
+\AtBeginDocument{\DeclareFontShape{T1}{lmr}{b}{it}{<-> ec-lmbo10}{}}
+\hypersetup{pageanchor=false}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+%\newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
+%\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+% The CAS front-matter machinery emits empty hyperlink anchors internally.
+% Filter only that class-generated diagnostic; all other Hyperref warnings remain visible.
+\makeatletter
+\let\SCOriginalHyWarning\Hy@Warning
+\renewcommand{\Hy@Warning}[1]{%
+  \IfStrEq{#1}{Ignoring empty anchor}{}{\SCOriginalHyWarning{#1}}}
+\makeatother
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newdefinition{remark}{Remark}
+\newcommand{\Int}{\operatorname{Int}}
+\newcommand{\Sub}{\operatorname{Sub}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\Hard}{\mathsf{Hard}}
+\newcommand{\sha}[4]{\texttt{#1\hspace{0pt}#2\hspace{0pt}#3\hspace{0pt}#4}}
+
+\hypersetup{
+  pdftitle={Beyond the Grand Coalition: Simplicial Heyting Semantics and Higher-Order Coalition Capacity in the European Parliament},
+  pdfauthor={Alireza Pourmoslemi},
+  pdfsubject={European Parliament: simplicial Heyting semantics and higher-order resilience},
+  pdfkeywords={SC-Logic, European Parliament, Heyting negation, higher-order networks, modularity}
+}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{0.8}
+\def\textpagefraction{0.05}
+
+\shorttitle{Graded simplicial negation in legislative coalitions}
+\shortauthors{A. Pourmoslemi}
+
+\title[mode=title]{Beyond the Grand Coalition: Simplicial Heyting Semantics and Higher-Order Coalition Capacity in the European Parliament}
+
+\author[1]{Alireza Pourmoslemi}
+\cormark[1]
+\ead{a\_pourmoslemy@pnu.ac.ir}
+\credit{Conceptualization, Methodology, Formal analysis, Software, Validation, Data curation, Visualization, Writing--original draft, Writing--review and editing}
+
+\affiliation[1]{organization={Department of Mathematics, Payame Noor University},
+  city={Tehran},
+  country={Iran}}
+
+\cortext[1]{Corresponding author}
+
+\begin{abstract}
+Pairwise party separation and higher-order legislative capacity need not move together. We apply simplicial Heyting semantics (SC-Logic) to European Parliament roll calls, tracking weighted Newman--Girvan party modularity and clique-based depth over thresholded co-Yes graphs. In the revised EP9 case study (2019--June 2022), modularity rises as the maximum face dimension falls at the selected local step. This is an exploratory finding: it does not identify the cause of the decline, and the location of the drop depends on the threshold mesh. Supplementary EP6 results from the 2004--2009 term, which use a legacy normalization and dimension limit, show the same direction without a comparable null test.
+\end{abstract}
+\begin{highlights}
+\item Higher-order clique depth is studied alongside weighted party modularity in EP roll calls.
+\item At a selected EP9 local step, modularity rises as maximum face dimension falls.
+\item Party-aware nulls support the modularity contrast; the depth drop is not established beyond the null.
+\item The location of the drop depends on threshold mesh; bootstrap depth is approximate.
+
+\end{highlights}
+\begin{keywords}
+SC-Logic \sep simplicial Heyting semantics \sep European Parliament \sep higher-order networks \sep modularity \sep coalition structure
+\end{keywords}
+\maketitle
+\hypersetup{pageanchor=true}
+\pagestyle{plain}
+\section{Introduction}\label{sec:introduction}
+Can a legislature become more clearly partitioned into political groups while losing the capacity to sustain large coalitional configurations? Weighted modularity $Q(\tau)$ measures within-group edge concentration relative to a degree-based null model, not the depth of a simplicial face order. Our descriptive thesis is that pairwise modularity alone does not characterize coalition structure: threshold-dependent dimension $d_{\max}$ supplies a complementary measure of higher-order capacity. We do not use modularity as a definition of polarisation, and we make no claim that either quantity measures it.
+
+We study EP6 (2004--2009) and the available EP9 window (2019--June 2022). Observation windows and cohorts differ; this is a systematically specified descriptive comparison, not a controlled experiment or a causal assessment of historical shocks. Roll calls are not unique laws, and member rows are not contemporaneous seat counts.
+
+SC-Logic locates legislative configurations in partially ordered families of simplices and equips explicitly chosen valuation lattices with Heyting operations. Higher-order representations retain joint configurations not explicitly enumerated by scalar graph summaries \citep{BensonGleichLeskovec2016,BattistonEtAl2020}. Graph cliques, however, need not be witnessed by a common vote. We distinguish observed support, flag capacity, and poset semantics.
+
+Sections~\ref{sec:framework} and~\ref{sec:empirical_setup} define the construction and data. Sections~\ref{sec:results} and~\ref{sec:discussion} separate local contrasts from global associations and interpretation. Appendix~\ref{app:reproducibility} documents reproducibility.
+
+%%% ============================================================
+%\section{Related work}
+%\label{sec:related}
+%%% ============================================================
+%
+%\subsection{Spatial models of legislative voting}
+%
+%The dominant framework for analysing roll-call data treats legislators as
+%points in a low-dimensional policy space and recovers ideal-point estimates
+%from patterns of agreement and disagreement.
+%\citet{PooleRosenthal1985} introduced NOMINATE, demonstrating that a
+%two-dimensional spatial model accounts for most of the variance in U.S.\ congressional
+%votes; subsequent work confirmed the stability of this structure across
+%sessions \citep{PooleRosenthal1991,PooleRosenthal1997}.
+%\citet{ClintonJackmanRivers2004} placed ideal-point estimation on a Bayesian
+%foundation, providing uncertainty quantification for individual legislator
+%positions.
+%These models quantify \emph{pairwise} separation: the distance between two
+%legislators or the probability that they vote identically.
+%The present paper asks a complementary question — whether legislators can
+%sustain \emph{large} co-Yes coalitions — which is not captured by any two-point
+%distance.
+%\citet{Carey2009} surveys how legislative institutions shape voting cohesion
+%across comparative settings, providing context for interpreting cohesion
+%statistics at the group level.
+%
+%\subsection{The European Parliament as an empirical site}
+%
+%\citet{HixNouryRoland2007} established that EP voting is structured primarily
+%by the left--right dimension of the pan-European party groups rather than by
+%national delegation, and documented rising cohesion of those groups across the
+%first five parliamentary terms.
+%\citet{HixHoyland2011} places this within a broader account of EU political
+%development, arguing that the EP increasingly resembles a legislature in which
+%government and opposition dynamics operate across ideological rather than
+%national lines.
+%\citet{FarrellScully2007} examine whether MEP behaviour reflects constituency
+%pressure or pan-European party discipline, a tension relevant to interpreting
+%the group-level traces reported in Section~\ref{sec:hns} of the present paper.
+%Collectively this literature motivates using party-group labels as the
+%relevant units for modularity computation, as we do in Section~\ref{sec:setup},
+%while cautioning that label stability across terms cannot be taken for granted
+%\citep{HixNouryRoland2007}.
+%
+%\subsection{Network approaches to polarisation and cohesion}
+%
+%\citet{AndrisEtAl2015} analysed U.S.\ congressional roll calls as a bipartite
+%co-voting network, showing that cross-party cooperation in the House declined
+%monotonically from 1949 to 2011; their edge-weight construction is structurally
+%analogous to the co-Yes weight $\omega(i,j)$ used here.
+%\citet{GirvanNewman2002} introduced the modularity objective that underlies the
+%Newman--Girvan $Q$ statistic \citep{NewmanGirvan2004} used throughout
+%Section~\ref{sec:results}; \citet{Fortunato2010} surveys resolution-limit
+%issues and benchmark comparisons that apply equally to our fixed-label variant.
+%\citet{BlondelEtAl2008} describe the Louvain algorithm, included here as a
+%reference point for community-detection methodology even though our $Q$
+%computation fixes group labels rather than optimising partition assignment.
+%The comparison with fuzzy community detection \citep{ZhangWangZhang2007} is representational; the local contrast in Section~\ref{subsec:local} uses weighted Newman--Girvan modularity on fixed party labels.
+%
+%\subsection{Higher-order networks and simplicial topology}
+%
+%Pairwise graphs discard multi-agent interactions; simplicial complexes restore
+%them.
+%\citet{BattistonEtAl2020} survey higher-order interaction frameworks across
+%physics, biology, and social science, arguing that hyperedge-based measures can
+%reveal dynamics invisible to graph-projected statistics.
+%\citet{BensonGleichLeskovec2016} demonstrate that motif-based higher-order
+%clustering exposes meso-scale structure in networks where standard modularity
+%yields flat partitions; their triangle-channel construction motivates
+%$CI_{2,H}$ in Section~\ref{subsec:triangles}.
+%\citet{BianconiBianconi2021} provide a systematic account of simplicial
+%complexes as a modelling language, including face-poset lattice structure and
+%dimension-dependent percolation thresholds.
+%\citet{PataniaEtAl2017} apply persistent Betti numbers to social and
+%collaboration networks, illustrating how filtration trajectories encode
+%organisational structure; our $d_{\max}(\tau)$ trajectories share this
+%filtration logic while substituting the face-poset depth for homological rank.
+%\citet{GiustiBassett2016} survey topological summaries of neural and social
+%data, noting that even dimension-zero summaries (connected components) carry
+%information that edge-density alone does not.
+%
+%\subsection{Lattice theory and Heyting semantics}
+%
+%The algebraic backbone of the paper is the Heyting algebra $\Sub(K_\tau)$
+%of sub-complexes ordered by inclusion.
+%\citet{Johnstone1982} gives the canonical account of Heyting algebras arising
+%from toposes and frame theory; our use of the face-poset as an Alexandrov
+%space follows the topological representation reviewed there.
+%\citet{MacLaneMoerdijk1992} place this construction within sheaf semantics,
+%connecting the subobject classifier of a presheaf topos to the lattice of
+%sieves on a poset — the same lattice we interpret semantically in
+%Section~\ref{sec:framework}.
+%The stage-local negation operator $\neg_\tau\varphi = \Int(K_\tau
+%\setminus \varphi)$ is the standard Heyting pseudocomplement; its
+%co-Heyting dual is discussed in \citet{Lawvere1991} in the context of
+%boundary operators, though we do not use the dual here.
+%\citet{Pourmoslemi2026Semantics} develops the SC-Logic framework from which
+%the graded negation reading adopted in Section~\ref{subsec:hns} is drawn.
+%
+%\subsection{Deliberative and agonistic political theory}
+%
+%The interpretive frame of Section~\ref{sec:discussion} draws on two traditions.
+%\citet{Habermas1996} grounds democratic legitimacy in communicative reason and
+%argues that coalition-building across difference is constitutive of
+%deliberative politics.
+%\citet{Arendt1958HumanCondition} locates political action in the
+%\emph{inter-esse} — the space-between that requires plural actors — a figure
+%we use to interpret the structural gap between pairwise separation and
+%higher-order coalition capacity.
+%\citet{Mouffe2000,Mouffe2013} contest the Habermasian consensus ideal,
+%arguing that agonistic pluralism is both empirically more accurate and
+%normatively desirable; this tension is acknowledged in
+%Section~\ref{subsec:political} as a limit on how far algebraic measures can
+%adjudicate political assessments.
+
+%% ============================================================
+%% ============================================================
+\section{Related work}
+\label{sec:related}
+%% ============================================================
+
+This section situates the paper in five literatures: spatial models of
+roll-call voting, empirical work on the European Parliament (EP), network
+approaches to polarisation and cohesion, higher-order and simplicial
+methods, and the lattice-theoretic and political-theoretic background of the
+framework. For each, we indicate what the literature measures and what it
+does not, since the contribution of the paper depends on that gap.
+
+\subsection{Spatial models of legislative voting}
+
+The dominant approach to roll-call data represents legislators as points in a
+low-dimensional policy space and estimates their positions from patterns of
+agreement. \citet{PooleRosenthal1985} introduced the NOMINATE family for
+the U.S.\ Congress, and later work reported that a small number of dimensions
+accounts for most of the systematic variation in votes
+\citep{PooleRosenthal1991,PooleRosenthal1997}. \citet{ClintonJackmanRivers2004}
+recast ideal-point estimation in a Bayesian framework, which yields explicit
+uncertainty for individual positions. \citet{Carey2009} discusses how
+legislative institutions condition voting cohesion, which is the context in
+which group-level cohesion statistics should be read.
+
+These models are organised around \emph{pairwise} proximity: two legislators
+are close if they tend to vote alike. They characterise who agrees with whom,
+but they do not directly describe whether a set of legislators can jointly
+support a motion. The present paper addresses that second question through
+the size and depth of co-Yes coalitions, which are defined on sets of
+legislators rather than on pairs.
+
+\subsection{The European Parliament as an empirical site}
+
+Empirical work on the EP has repeatedly found that voting is organised more by
+pan-European party groups than by national delegation.
+\citet{HixNouryRoland2007} analyse this pattern over successive terms and
+document the development of group cohesion. \citet{HixHoyland2011} place
+these findings within a broader account of EU politics in which political-group
+conflict structures parliamentary competition.
+\citet{FarrellScully2007} examine the tension between constituency pressure and
+party discipline in MEP behaviour, which bears directly on how group-level
+patterns should be interpreted.
+
+These studies motivate using party-group labels as the reference units for
+modularity, as we do in Section~\ref{sec:setup}. They also show that group
+structure changes across terms, so label-based measures should be reported
+with their stability and not treated as fixed properties of the chamber. The
+paper follows this caution: the modularity results are conditioned on the
+fixed label partition and are not a claim about an optimal partition of the
+EP.
+
+\subsection{Network approaches to polarisation and cohesion}
+
+Network methods have been applied to legislative data by building a graph in
+which legislators are linked by voting similarity. \citet{AndrisEtAl2015}
+construct such a network from U.S.\ House roll calls and report a long-run
+decline in cross-party cooperation.
+The edge weight used in the present paper, the co-Yes weight
+$\omega(i,j)$, is defined on the same kind of co-voting data, but it is used
+to build a simplicial complex rather than a graph alone.
+
+Modularity provides the standard summary of how strongly a partition separates
+a network into dense groups. \citet{GirvanNewman2002} introduced the
+divisive approach to community structure, and \citet{NewmanGirvan2004}
+defined the modularity index $Q$ used throughout Section~\ref{sec:results}.
+\citet{Fortunato2010} reviews the limits of modularity, including the
+resolution limit and sensitivity to the null model; these limits apply to our
+fixed-label variant as well. \citet{BlondelEtAl2008} describe a fast greedy
+optimisation method that is widely used for maximising $Q$. We do not optimise
+the partition: the reported $Q$ is computed on fixed party labels, and the
+Louvain method is cited only as a reference point for the standard practice of
+community detection. \citet{ZhangWangZhang2007} propose fuzzy community
+detection, in which nodes may belong to several communities. The comparison in
+the present paper is conceptual and does not implement that method; the local
+contrast in Section~\ref{subsec:local} uses weighted Newman--Girvan modularity
+on fixed labels.
+
+\subsection{Higher-order networks and simplicial topology}
+
+Pairwise graphs record interactions between two units at a time. Simplicial
+complexes and hypergraphs can represent interactions among larger groups.
+\citet{BattistonEtAl2020} review frameworks for higher-order interactions and
+argue that such measures can capture structure that is lost when interactions
+are projected onto pairwise edges. \citet{BianconiBianconi2021} give a
+systematic account of simplicial complexes as models, including their
+face-poset structure. \citet{BensonGleichLeskovec2016} show that clustering
+based on higher-order motifs can reveal organisation that pairwise
+clustering does not, which motivates the triangle-based statistic
+$CI_{2,H}$ in Section~\ref{subsec:triangles}.
+
+Topological data analysis offers a second route to multi-scale structure.
+\citet{PataniaEtAl2017} use persistent homology on collaboration networks to
+track how structure changes along a filtration. The filtration by threshold
+$\tau$ used here shares that logic, but the paper tracks the depth of the
+face poset rather than homological invariants. \citet{GiustiBassett2016}
+survey topological summaries of networked data and note that even
+zero-dimensional summaries, such as connected components, carry information
+that edge density does not. This observation is the reason the depth
+trajectory $d_{\max}(\tau)$ is reported alongside modularity rather than
+replacing it.
+
+\subsection{Lattice theory and Heyting semantics}
+
+The algebraic setting is the Heyting algebra $\Sub(K_\tau)$ of subcomplexes,
+ordered by inclusion. The general theory of Heyting algebras arising from
+frames and toposes is given in \citet{Johnstone1982}. \citet{MacLaneMoerdijk1992}
+relate the subobject classifier of a presheaf topos to the lattice of sieves,
+which is the viewpoint from which the semantic interpretation in
+Section~\ref{sec:framework} is read.
+
+The stage-local negation $\neg_\tau\varphi = \Int(K_\tau\setminus\varphi)$ is
+the Heyting pseudocomplement in this lattice. Its dual operation, the
+co-Heyting structure, is studied in \citet{Lawvere1991}, who treats the co-Heyting
+boundary in certain toposes; the paper does not use the dual and
+mentions it only to delimit the construction. The graded negation reading in
+Section~\ref{subsec:hns} is developed in the SC-Logic framework of
+\citet{Pourmoslemi2026Semantics}, which is cited for that reading and not for
+any empirical result.
+
+\subsection{Political theory}
+
+The interpretation in Section~\ref{sec:discussion} draws on three
+traditions. \citet{Habermas1996} treats legitimacy as grounded in
+communicative reason, with coalition-building across difference as central to
+deliberative politics. \citet{Arendt1958HumanCondition} describes political
+action as occurring in the space between plural actors, a notion we use to
+interpret the gap between pairwise proximity and higher-order coalition
+capacity. \citet{Mouffe2000,Mouffe2013} argue that agonistic pluralism offers a
+more realistic account of democratic conflict than the consensus ideal. The
+paper engages these arguments only as interpretive context. Section~\ref{subsec:political}
+discusses the limits of what algebraic measures can establish about
+normative questions.
+
+\subsection{Positioning}
+
+Taken together, the spatial literature measures pairwise proximity, the EP
+literature documents group-level structure without measuring higher-order
+coalition capacity, and the network and topological literatures provide
+multi-scale tools that, to our knowledge, have not been applied to roll-call
+coalitions in this form. The paper combines these by defining a coalition capacity on sets of
+legislators, tracking its depth along a threshold filtration, and comparing it
+with modularity on fixed party labels. Its claims are restricted to what these
+computations show under the stated null models and sensitivity checks.
+
+\section{Mathematical framework: simplicial Heyting semantics}\label{sec:framework}
+\subsection{Observed coalitions and threshold capacity}
+Let $A_{ir}\in\{-1,0,+1\}$ encode No, abstention/non-participation, and Yes for member row $i$ and roll call $r$. Abstention and absence remain distinct raw codes but are excluded from both Yes and strict No witnesses. For $U_r=\{i:A_{ir}=+1\}$, define
+\begin{equation}
+K^{\mathrm{obs}}=\{\varnothing\ne\sigma\subseteq V:\exists r,\ \sigma\subseteq U_r\}.
+\end{equation}
+This downward closure encodes shared assent, not deliberative quality. Define
+\begin{equation}
+\omega_{\mathrm{EP9}}(i,j)=\begin{cases}\dfrac{\sum_r\mathbf1\{A_{ir}=A_{jr}=+1\}}{c_{ij}},&c_{ij}\geq20,\\0,&c_{ij}<20,\end{cases}\quad
+G_\tau=(V,\{\{i,j\}:\omega(i,j)\geq\tau\}).
+\end{equation}
+Here $c_{ij}=\sum_r P_{ir}P_{jr}$, where $P_{ir}=1$ only for a recorded Yes, No, or Abstain decision; absence is not presence. This separate indicator is required because the ternary zero alone does not distinguish abstention from absence. EP9 uses this co-presence denominator, with observed sensitivity analyses at minimum counts 10 and 50. EP6 retains the legacy denominator of all roll calls; cross-term density comparisons therefore use different normalizations. All vertices, including isolates, are retained. Flag capacity $F_\tau=\mathrm{Cl}(G_\tau)$ differs from $K^{\mathrm{obs}}_\tau=K^{\mathrm{obs}}\cap F_\tau$: pairwise assent can arise on different roll calls. Increasing $\tau$ gives a decreasing filtration, not a temporal history.
+\subsection{Depth and computational bounds}
+For a nonempty finite complex, the longest chain of nonempty faces has length $d_{\max}+1$. The depth computation records
+\begin{equation}
+D(\tau)=d_{\max}(\tau)+1,\qquad \mathrm{BD}_n(\tau)=d_{\max}(\tau).
+\end{equation}
+Here $\mathrm{BD}_n$ is a notational alias for $d_{\max}$, not a logical completeness or inferential-length theorem. EP6 retains the legacy dimension-15 search limit. EP9 uses uncapped maximum-clique search: certified rows report exact dimension, while unfinished searches report lower and upper bounds, not a substituted exact value. The EP9 search budget is 10 seconds on $0.38$--$0.52$ and within $0.02$ of the selected drop, and 0.5 seconds elsewhere. Isolated vertices have dimension zero and depth one.
+\subsection{Distinct Heyting algebras}\label{subsec:heyting}
+The finite distributive lattice $\Sub(K)$ of downward-closed subcomplexes is a Heyting algebra \citep{Johnstone1982,Pourmoslemi2026Semantics}:
+\begin{equation}
+L\Rightarrow M=\bigcup\{C\in\Sub(K):C\cap L\subseteq M\},\quad \neg L=L\Rightarrow\varnothing.
+\end{equation}
+It must not be identified with the algebra of upsets on $P_K=(K,\subseteq)$. For that Alexandrov topology, open sets are coface-closed:
+\begin{equation}
+\neg_H U=\{\sigma:\uparrow\!\sigma\cap U=\varnothing\},\quad
+\neg_H\neg_H U=\operatorname{int}(P_K\setminus\neg_H U).
+\end{equation}
+A boundary defined by set difference need not be a subcomplex or upset.
+\begin{proposition}[Antitonicity]
+Within either specified Heyting algebra, $U\subseteq W$ implies $\neg W\subseteq\neg U$.
+\end{proposition}
+\begin{proof}
+Every admissible element disjoint from $W$ is disjoint from $U$. Taking the greatest such element gives the inclusion; strictness is not guaranteed.
+\end{proof}
+Negation is graded by changing ambient complexes and valuations, not by assigning numerical intensities to individual opposition.
+\subsection{Stage-local HNS and group traces}\label{sec:hns}
+On the 1-dimensional face poset of $G_\tau$, let $U_v=\uparrow\!v$ contain $v$ and its incident edges. Then
+\begin{equation}
+\text{HNS}(\tau)=\frac{|\{v:\deg(v)>0,\ \neg_H\neg_H U_v\ne U_v\}|}{|\{v:\deg(v)>0\}|}.
+\end{equation}
+
+The implementation records zero when no vertex is active. The statistic has an algebraic meaning. In a Heyting algebra, $\neg\neg a=a$ holds for every element exactly when the algebra is Boolean, and $\neg\neg a\ne a$ witnesses that $a$ lies outside the Boolean core $\{a:\neg\neg a=a\}$. Each defective $U_v$ is therefore a certified witness of non-Booleanity, and $\text{HNS}(\tau)$ is the fraction of tested principal upsets that are witnesses. Here double negation adds precisely the degree-one neighbors of $v$, so a defective active vertex is adjacent to a leaf; this identity is specific to the 1-dimensional poset. Consequently $\text{HNS}(\tau)>0$ proves that the algebra is not Boolean, whereas $\text{HNS}(\tau)=0$ does not, because only the sets $U_v$ are tested. Accordingly, $1-\text{HNS}$ is a descriptive ratio over these valuations and not a measure of the full algebra. Treating HNS as a graded quantity, we use it only to compare stages, not to assign a numerical intensity to any actor.
+
+For group vertices $G$, set $N_\tau(G)=\{v\notin G:\exists g\in G,\{v,g\}\in E_\tau\}$. The implemented vertex traces are
+\begin{align}
+Z_G&=(V\setminus G)\setminus N_\tau(G),\\
+Z_G^{(2)}&=(V\setminus Z_G)\setminus N_\tau(Z_G),\quad
+\operatorname{defect}_G=|Z_G^{(2)}\setminus G|.
+\end{align}
+These are traces of group-upset negation and double negation, not induced-complement negation in $\Sub(K)$.
+\subsection{Triangle channels and modularity}\label{sec:ci}\label{subsec:triangles}
+A flag triangle has a strict No witness iff all three members vote No on at least one common roll call. The separate-channel statistic is
+\begin{equation}
+CI_{2,\mathrm{cross}}=1-\frac{\#\{\text{flag triangles with a shared No witness}\}}{f_2(F_\tau)}.
+\end{equation}
+It is set to one for zero triangles, with counts retained to flag that convention. Separate channels do not imply statistical independence. The separately specified $CI_{2,H}(G)$ is the density of graph triangles meeting both $G$ and $N_\tau(G)$ among all possible triples in their union meeting both sets; it is undefined for zero denominator.
+
+Weighted party modularity is
+\begin{equation}
+Q(\tau)=\frac1{2W}\sum_{i,j}\left(w_{ij}-\frac{k_i k_j}{2W}\right)\mathbf1\{g_i=g_j\},
+\end{equation}
+where $w_{ij}=\omega(i,j)\mathbf1\{\omega(i,j)\geq\tau\}$, $k_i=\sum_jw_{ij}$ and $2W=\sum_i k_i$. Edgeless graphs have conventional $Q=0$. This is the Newman--Girvan functional \citep{NewmanGirvan2004}, evaluated on fixed party labels, not optimized communities or a verified distinct Zhang modularity. Comparison with fuzzy community detection \citep{ZhangWangZhang2007} is representational, not an algorithmic replication.
+\section{Empirical setup and computational pipeline}\label{sec:empirical_setup}\label{sec:setup}
+\subsection{Corpus and provenance}
+Individual votes are taken from the VoteWatch Europe roll-call-vote workbooks for EP6 (extract of 13 June 2022) and EP9 (extract of 22 June 2022); accompanying workbooks provide act metadata only. The EP9 records end in June 2022. We refer to that window as EP9 (2019--2022), although the institutional term continued through 2024.
+
+Table~\ref{tab:ep_summary} reports membership-row counts rather than simultaneous chamber sizes. Historical labels are harmonized to EPP, Socialists (PES/S\&D), Liberals (ALDE/Renew), Greens/EFA, the Left, conservative/sovereigntist families, and non-attached members. UEN-to-conservative harmonization is an analytical mapping, not organizational identity. Static grouping can obscure changes of affiliation and membership turnover.
+\begin{table}[pos=t]\centering\small
+\caption{Audited local EP corpora. EP9 ends in June 2022. Density is the edge density of $G_{0.50}$; EP9 uses the co-presence denominator, whereas EP6 retains its legacy normalization. Capped rows (EP6 only) do not identify the true maximum dimension. EP6 entries are retained historical results, not recomputed in results\_v3.}
+\label{tab:ep_summary}
+\begin{tabular}{lrr}\toprule
+Attribute & EP6 & EP9\\\midrule
+Recorded membership rows & 940 & 811\\
+Roll calls in aligned matrix & 6,199 & 13,459\\
+Harmonized political groups (excluding UNKNOWN) & 8 & 8\\
+Recorded Yes decisions & 2,207,437 & 5,349,743\\
+Mean affirmative coalition size & 356.095661 & 397.484434\\
+Maximum reported dimension (capped; EP6 only) & 15 & ---\\
+Edge density at $\tau=0.50$ & 0.004173748 & 0.27517\\
+Last threshold at dimension ceiling (EP6 only) & 0.52 & ---\\
+First edgeless threshold & 0.66 & 0.86\\\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Execution and audit}
+The mesh comprises 41 thresholds $\tau\in\{0.10,0.12,\ldots,0.90\}$. Exact Yes pair counts generate the graphs. Trajectory, poset-depth, and local-contrast records are aligned by threshold. Mean affirmative coalition sizes are counts of Yes votes per roll call.
+
+
+
+A row is artifact-flagged when its edge count is at most five, active-vertex count at most ten, or component count equals edge count. The recorded component count includes isolates. Summary statistics are evaluated with and without flagged rows. Fixed-topology group-label permutations form a negative control: HNS does not depend on these labels.
+\section{Empirical Results}\label{sec:results}\label{sec:experiments}
+\subsection{EP6 and EP9 trajectory dynamics}
+Figure~\ref{fig:ep-depth} separates the historical dimension-limited EP6 trajectory from revised, uncapped EP9 results. On the 0.02 mesh EP9 has 35 certified exact rows and six timeouts, at $\tau=0.14,0.20,0.22,0.24,0.26,0.28$. Exact dimension is 697 at $0.10$, 387 at $0.44$, and 302 at $0.50$; the first edgeless threshold is $0.86$. Bounds, not point estimates, describe unfinished searches. Different weight denominators and search guarantees preclude a direct capped EP6--uncapped EP9 persistence comparison.
+\begin{figure}[pos=htbp]\centering
+\includegraphics[width=0.9\textwidth]{sc_logic_figures/ep_depth_Q_v8.pdf}
+\caption{Historical EP6 capped dimension (left) and revised EP9 uncapped dimension with weighted Newman--Girvan modularity (right). EP9 markers denote certified values; vertical intervals give lower/upper bounds for six timeouts at $\tau=0.14,0.20,0.22,0.24,0.26,0.28$. Poset depth equals dimension plus one; $\mathrm{BD}_n$ equals dimension. EP6 and EP9 use different weight denominators.}
+\label{fig:ep-depth}\end{figure}
+\subsection{Local modularity contrasts and global associations}\label{subsec:local}
+On the EP9 0.02 mesh, the certified largest drop is $0.42\to0.44$: exact dimension falls from 463 to 387 ($\Delta d=-76$), while $Q$ increases from 0.049523124 to 0.061155409 ($\Delta Q=0.011632285$). On the 0.01 mesh, the largest certified drop is $0.42\to0.43$ ($\Delta d=-47$, $\Delta Q=0.004700461$), but its global optimality is unverified because other searches timed out. On the 0.05 mesh, the certified largest drop is $0.40\to0.45$ ($\Delta d=-135$, $\Delta Q=0.022355365$). These are mesh-dependent local steps, not a mesh-invariant transition. Figure~\ref{fig:ep-local} displays the revised local contrasts.
+
+For 2000 contiguous block-bootstrap resamples (seed 42), depth is an uncapped fixed-order two-start greedy lower-bound envelope, not exact dimension. At block length 50, the 95\% intervals are $[-0.614798,0.226416]$ for Pearson correlation and $[-0.534703,0.112423]$ for Spearman correlation. These refer to approximate depth and include zero; no directional global association is established. At $0.42\to0.44$, the $\Delta Q$ interval is $[0.002819469,0.020088002]$ and the approximate-depth increment interval is $[-72,-6]$. The approximate-depth point increment is $-38$, unlike the exact observed $-76$. Threshold dependence and search approximation limit interpretation.
+\begin{figure}[pos=htbp]\centering
+\includegraphics[width=0.9\textwidth]{sc_logic_figures/ep_local_v8.pdf}
+\caption{Revised EP9 mesh-specific selected steps. Each pair shows certified endpoint dimensions and weighted Newman--Girvan modularity. On the 0.01 mesh the largest certified drop need not be the global maximum over unfinished searches.}
+\label{fig:ep-local}\end{figure}
+
+\subsection{HNS: stage-local defects and sparse-tail artifacts}\label{subsec:hns}
+HNS evaluates double negation independently at each threshold. It has no memory across thresholds, estimates no change point, and does not detect phase transitions. Peaks may co-occur with sparse configurations without identifying a cause. Figure~\ref{fig:ep-hns} marks rows requiring this qualification.
+
+The EP6 maximum at $\tau=0.64$ is exactly one disconnected dyad plus 938 isolated vertices. Both active vertices are defective, giving HNS equal to one. This sparse-tail artifact is not compelling evidence of maximal political multipolarity. With artifacts included, EP6 mean, median, and peak HNS are 0.054656, 0.005690, and 1.000000; after exclusion, 0.040035, 0.018975, and 0.285714. EP9 values are 0.007802, 0.001901, and 0.078947 with artifacts, and 0.010319, 0.003110, and 0.078947 without. The EP9 peak occurs at $\tau=0.66$ and is not flagged.
+
+At those peaks, 1,000 group-label permutations with seed 42 leave HNS invariant. The null standard deviation is zero and the empirical upper-tail probability is one. A standardized $z$ score is undefined for this degenerate null; the stored zero is a reporting convention, not evidence of significance. A group-dependent statistic would be required for an informative label-permutation test.
+\begin{figure}[pos=htbp]\centering
+\includegraphics[width=0.9\textwidth]{sc_logic_figures/ep_hns_artifact_audit.pdf}
+\caption{Stage-local HNS. Crosses denote artifact-flagged rows. The EP6 peak at 0.64 is generated by one dyad, not an identified political transition.}
+\label{fig:ep-hns}\end{figure}
+
+\subsection{Party-aware null for EP9}\label{subsec:party-null}
+The EP9 party-aware null uses fixed input, seed 42, and 1000 draws, permuting Yes/No/Abstain states within party and roll call while preserving member presence. Two UNKNOWN members remain their own group. For any exact statistic $T$, the one-sided upper-tail Monte Carlo probability is
+\begin{equation}
+p_T=\frac{1+\sum_{b=1}^{1000}\mathbf1\{T_b\geq T_{\mathrm{obs}}\}}{1001}.
+\end{equation}
+The implementation compares $Q_b\geq Q_{\mathrm{obs}}-10^{-12}$. For bounded depth, let observed bounds be $[l_o,u_o]$ and draw bounds $[l_b,u_b]$. The reported lower probability counts $l_b\geq u_o$ and the upper probability counts $u_b\geq l_o$, each with the same plus-one correction. Ambiguous comparisons are possible but not guaranteed exceedances. No multiple-testing correction is applied.
+
+At tested thresholds $0.40$--$0.46$, observed modularity exceeds all null draws; this is not true at $0.50$. Depth upper-tail intervals do not establish exceptional depth loss: these stagewise tests do not directly test $\Delta d$. Table~\ref{tab:vote-null} gives all revised EP9 probabilities.
+\subsection{Historical fixed-margin reference}\label{subsec:vote-null}
+The earlier EP6 fixed-margin vote-matrix experiment used 200 MCMC draws (seed 42) preserving each member's nonzero vote count and each roll call's Yes/No counts. Its dimension statistic was limited to 15, and convergence was not established. EP6 null draws were not rerun in results\_v3. Figure~\ref{fig:vote-null} retains that historical reference only; its obsolete EP9 panel is removed. No capped fixed-margin EP9 result is compared with the revised uncapped observations.
+\begin{table}[pos=htbp]\centering\small
+\caption{Revised EP9 party-aware null (1000 draws, seed 42). Depth probabilities are bounded upper-tail probabilities; ambiguous counts reflect unresolved depth comparisons, not missing draws. Multiple testing is uncorrected.}\label{tab:vote-null}
+\begin{tabular}{rrrrr}\toprule
+$\tau$ & $Q_{\mathrm{obs}}$ & $p_Q$ & $[p_d^{\mathrm{lower}},p_d^{\mathrm{upper}}]$ & Ambiguous\\\midrule
+0.40 & 0.047121590 & 0.000999001 & $[0.811188811,1.000000000]$ & 189 \\
+0.42 & 0.049523124 & 0.000999001 & $[0.933066933,1.000000000]$ & 67 \\
+0.44 & 0.061155409 & 0.000999001 & $[1.000000000,1.000000000]$ & 0 \\
+0.46 & 0.079100574 & 0.000999001 & $[1.000000000,1.000000000]$ & 0 \\
+0.50 & 0.169220537 & 1.000000000 & $[0.996003996,1.000000000]$ & 4 \\
+\bottomrule\end{tabular}\end{table}
+\begin{figure}[pos=htbp]\centering
+\includegraphics[width=0.85\textwidth]{sc_logic_figures/fig5_null_model_dmax_ep6_legacy.pdf}
+\caption{Historical EP6 fixed-margin reference only: observed dimension-limited greedy depth and pointwise null band from 200 MCMC draws. EP6 was not rerun in results\_v3. The obsolete EP9 panel is excluded; revised EP9 inference is in Table~\ref{tab:vote-null}.}\label{fig:vote-null}
+\end{figure}
+
+\section{Discussion}\label{sec:discussion}
+\subsection{Separation is not higher-order resilience}
+Rising $Q(\tau)$ may accompany a loss of higher-order cross-party structure. One possible account is that, as weaker cross-party ties are removed, surviving edges concentrate within parties, raising modularity while reducing the size of cliques and face chains. The present analysis does not test this account and does not identify a causal effect of political behavior. Group-pure fragments need not preserve the full network's cross-party higher-order configurations; conversely, a large clique does not establish shared deliberative justification.
+
+Joint reporting is therefore warranted. The results do not make modularity mathematically defective: $Q$ answers a different question and its limitations require care \citep{Fortunato2010}. Neither dimension nor its decline establishes non-collapsibility under simplicial collapses, homological persistence, or a hard ideological core. Those claims require additional invariants.
+\subsection{Interpretive note: the political space-between}\label{subsec:political}
+The following is a theoretical interpretation, not a finding. If thresholding removes cross-party bridging configurations, increased party separation can coexist with less room for structurally shared positions. Deliberative accounts hold that legitimacy cannot be reduced to density or a scalar consensus score \citep{Habermas1996}, and Arendtian accounts locate political action in the plurality of actors appearing to one another \citep{Arendt1958HumanCondition}. Agonistic pluralism, by contrast, holds that common coalitions need not erase legitimate disagreement \citep{Mouffe2000,Mouffe2013}. The combinatorial result is only that clique-based chains shorten as $d_{\max}$ falls; it does not prove reduced inferential competence, rights, or legitimacy, and it is not a measure of the willingness to dissent.
+\section{Scope, specification, and methodological limitations}\label{sec:limitations}
+The revised EP9 co-presence denominator excludes absence but includes recorded abstention, with minimum 20 joint observations. EP6 retains the original all-roll-call denominator and dimension-15 search limit. Consequently normalization, membership turnover, and computational guarantees prevent a direct cross-term depth or density ranking.
+
+Six of 41 EP9 observed searches time out, at $\tau=0.14,0.20,0.22,0.24,0.26,0.28$; their exact depths are unknown within reported bounds. Null searches also time out, requiring probability intervals and ambiguous counts. The selected drop is mesh-dependent: $0.42\to0.43$, $0.42\to0.44$, and $0.40\to0.45$ for meshes 0.01, 0.02, and 0.05, respectively; global optimality on the finest mesh remains unverified. Bootstrap results use approximate greedy depth, not exact maximum cliques, for all 2000 resamples at block lengths 20, 50, and 100.
+
+Party-aware tests are stagewise, one-sided, and uncorrected for multiple testing; they do not directly test a depth-increment null or establish causation. Two UNKNOWN members remain a separate group rather than being assigned a party. The revised EP9 party-aware null supplements the historical EP6 fixed-margin null; EP6 was not rerun in results\_v3. HNS and triangle-channel sections retain earlier diagnostics and were not recomputed on corrected EP9 input in this revision. The modularity implemented here is Newman--Girvan only, not a distinct Zhang algorithm.
+
+EP9 coverage ends in June 2022; only two legislative windows are studied. Static grouping can hide party switching. No causal claim about Brexit or the pandemic is supported. Yes and No channels share roll calls and are not independent. Flag capacity is not observed joint-vote support; dimension alone does not establish homological persistence, political competence, or democratic legitimacy.
+
+Downset and upset semantics yield different negations. Neither HNS equal to zero nor its Boolean-core ratio proves that the full face-poset algebra is Boolean. Stage-local HNS and invariant label permutations cannot detect phase transitions or establish political significance.
+
+\section{Conclusion}\label{sec:conclusion}
+In revised EP9 observations, Newman--Girvan party modularity rises while higher-order clique capacity falls at the selected local step. Modularity exceeds the party-aware null at the tested thresholds from $0.40$ to $0.46$, but not at $0.50$. Bounded depth tests do not establish a depth drop beyond the null, and they do not directly test increments. Drop location depends on threshold mesh; unfinished searches and approximate bootstrap depth remain explicit limitations. The legacy EP6 results are not an equivalent uncapped comparison. SC-Logic supplies proposition-relative semantics, not a causal or normative inference about democratic quality.
+\section*{Declaration of competing interest}
+The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+Data and code availability. The raw VoteWatch Europe roll-call data used in this study are not redistributed. The derived EP9 records and analysis code are available at [permanent repository URL] (DOI: [real DOI]). The archive contains the corrected input and party-aware null outputs, but not the raw VoteWatch files. The code is released under the [MIT License / chosen code licence]. The source data were obtained from [full VoteWatch source citation, workbook names, and access dates].
+\appendix
+\section{Reproducibility record}\label{app:reproducibility}
+The six results\_v3 files named above are the numerical sources for revised EP9 results. Fixed-input Yes totals are computed from results\_v2/input\_EP9\_fixed.npz. All 41 default thresholds retain search status and lower/upper depth bounds; mesh-specific increments, null ambiguity, and approximate bootstrap intervals are separate records. Seed 42 is used for the stored null and bootstrap experiments. Historical EP6 and protected HNS diagnostics are retained without a claim of rerunning them on revised input.
+\paragraph{Conventions.}
+All-threshold correlations include edgeless rows and use average ranks for Spearman ties. $CI_{2,\mathrm{cross}}=1$ for no triangles is conventional; $CI_{2,H}$ is missing for no admissible triples. HNS is zero for no active vertices. Stored degenerate-null $z=0$ means undefined standardization, not a valid Gaussian score. Static grouping and member identifiers require further audit before individual-level interpretation.
+\par\medskip
+\printcredits
+\bibliographystyle{cas-model2-names}
+\bibliography{references_v5}
+\end{document}

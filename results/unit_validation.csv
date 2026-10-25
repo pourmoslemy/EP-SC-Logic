@@ -1,0 +1,27 @@
+check,n,value,passed
+Exact pivoted BK vs networkx,1,0.0,True
+Exact pivoted BK vs networkx,1,0.1,True
+Exact pivoted BK vs networkx,1,0.4,True
+Exact pivoted BK vs networkx,1,0.8,True
+Exact pivoted BK vs networkx,1,1.0,True
+Exact pivoted BK vs networkx,5,0.0,True
+Exact pivoted BK vs networkx,5,0.1,True
+Exact pivoted BK vs networkx,5,0.4,True
+Exact pivoted BK vs networkx,5,0.8,True
+Exact pivoted BK vs networkx,5,1.0,True
+Exact pivoted BK vs networkx,15,0.0,True
+Exact pivoted BK vs networkx,15,0.1,True
+Exact pivoted BK vs networkx,15,0.4,True
+Exact pivoted BK vs networkx,15,0.8,True
+Exact pivoted BK vs networkx,15,1.0,True
+Exact pivoted BK vs networkx,28,0.0,True
+Exact pivoted BK vs networkx,28,0.1,True
+Exact pivoted BK vs networkx,28,0.4,True
+Exact pivoted BK vs networkx,28,0.8,True
+Exact pivoted BK vs networkx,28,1.0,True
+Weighted block Grams vs full expanded resample,17,0.0,True
+Weighted block Grams vs full expanded resample,17,1.0,True
+Weighted block Grams vs full expanded resample,17,2.0,True
+Weighted block Grams vs full expanded resample,17,3.0,True
+Weighted block Grams vs full expanded resample,17,4.0,True
+Q histogram vs direct formula and bootstrap depth lower-bound/envelope,17,41.0,True

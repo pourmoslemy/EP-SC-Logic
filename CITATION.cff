@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this software using the metadata below after filling the placeholders."
+type: software
+title: "Beyond the Grand Coalition: Simplicial Heyting Semantics and Higher-Order Coalition Capacity in the European Parliament"
+version: 0.1.0
+license: MIT
+repository-code: "[permanent repository URL]"
+authors:
+  - family-names: "Pourmoslemi"
+    given-names: "Alireza"
+    affiliation: "Payame Noor University"
+# ORCID TODO: author must confirm; no ORCID has been asserted.
+# DOI TODO: [real DOI]

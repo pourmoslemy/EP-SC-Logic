@@ -1,0 +1,29 @@
+{
+  "title": "Beyond the Grand Coalition: Simplicial Heyting Semantics and Higher-Order Coalition Capacity in the European Parliament",
+  "description": "Pairwise party separation and higher-order legislative capacity need not move together. We apply simplicial Heyting semantics (SC-Logic) to European Parliament roll calls, tracking weighted Newman--Girvan party modularity and clique-based depth over thresholded co-Yes graphs. In the revised EP9 case study (2019--June 2022), modularity rises as the maximum face dimension falls at the selected local step. This is an exploratory finding: it does not identify the cause of the decline, and the location of the drop depends on the threshold mesh. Supplementary EP6 results from the 2004--2009 term, which use a legacy normalization and dimension limit, show the same direction without a comparable null test.",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "creators": [
+    {
+      "name": "Pourmoslemi, Alireza",
+      "affiliation": "Payame Noor University"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "SC-Logic",
+    "European Parliament",
+    "Heyting semantics",
+    "higher-order networks",
+    "modularity",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "[real DOI]",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "TODO: author must confirm licence, ORCID, real DOI, permanent repository URL, source citation and access dates before deposit."
+}

@@ -1,0 +1,12 @@
+deviation
+"Input path, term label and output directory parameterized; seed=42; numerical kernels, thresholds and search budgets unchanged."
+EP6 raw vote header row=2 and member start row=4; EP9 header row=1 and member start row=2.
+EP6 physical Non-attached Members is NI using the original group mapping; the exact NI alias whitelist is extended for this explicit raw EP6 name. Initial pre-whitelist audit is retained under stage0_initial_audit and is NOT the computational input.
+"Input-specific audit constants: UNKNOWN=0, UNKNOWN present=0, stored-but-not-present=2066039; EP9 constants 2 and 1739894 are not applied to EP6."
+Canonical input_presence_audit.csv is the Stage-0 physical-coordinate audit; the reused Stage-1 presence report is separately saved as input_presence_audit_stage1.csv.
+"Existing v3 auxiliary meshes 0.01 and 0.05 and minima 10/50 retained unchanged; primary mesh=0.02, min_copresent=20, 41 thresholds 0.10..0.90."
+"Numerical execution uses copied run_observed/refine_selection/run_null_ep9/validate scripts; EP9-specific prose report_results.py is preserved as a term-parameterized copy, while this reporting-only adapter writes the requested numbers-only summary."
+"Original results_v3 files, results_v2, legacy results, raw EP6 and paper TEX hashes are verified unchanged."
+Stage 2/3 not executed: mandatory Stage-1 timeout gate (>10/41); explicit approval pending. Bootstrap and HNS skipped.
+"refine_selection.py: exit_code=1; no threshold, search budget, or selection rule was changed to remove this failure."
+"Refinement guard: final selected .02-grid step 0.60->0.62; 4/4 final-window default rows received 0.5s rather than the guard-required 10s. Initial greedy budget window was 0.42..0.48 plus fixed 0.38..0.52. The script wrote main_steps.csv before its failed assertion; those step records are retained as emitted, not labelled a successful refinement."

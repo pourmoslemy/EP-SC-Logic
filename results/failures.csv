@@ -1,0 +1,6 @@
+item,status,count,detail
+observed_exact_depth,timeout,18,41-grid counts across min10/20/50; all bounds/statuses in observed.csv; mesh bounds in mesh.csv
+mesh_001_global_largest_drop,unverified,1,"Largest certified exact step reported; some timeouts allow a larger drop, so no global claim"
+null_depth,bounded_search,3979,"0.12s legacy null budget, not observed enhanced 10s budget; exact Q and rigorous p_d interval/ambiguous count"
+UNKNOWN_metadata,explicit_UNKNOWN,2,"Members 124870 and 129141, zero present votes; separate UNKNOWN group retained, never imputed NI"
+bootstrap_depth,approximation,2000,Fixed-order uncapped greedy lower-bound depth; approximate-depth correlations and delta CIs only; Q/omega exact per resample; observed exact main delta_d=-76 versus greedy point=-38

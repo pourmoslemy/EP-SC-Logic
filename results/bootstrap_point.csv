@@ -1,0 +1,2 @@
+seed,tau_before,tau_after,pearson_approx_d,spearman_approx_d,delta_Q,delta_d_approx,delta_Q_at_legacy_step,delta_d_approx_at_legacy_step
+42,0.42,0.44,-0.25717719328554595,0.0618182464272117,0.011632284903965812,-38.0,0.01794516539295027,-20.0

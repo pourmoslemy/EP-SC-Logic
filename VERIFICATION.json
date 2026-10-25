@@ -1,0 +1,304 @@
+{
+  "status": "release_blocked",
+  "copied_files": 87,
+  "copied_paper_files": 15,
+  "copied_result_files": 41,
+  "copied_code_files": 31,
+  "copy_md5_matches": 87,
+  "citation_keys": 27,
+  "bibliography_keys": 34,
+  "missing_citations": [],
+  "figure_references": 4,
+  "missing_figures": [],
+  "syntax_files": 31,
+  "syntax_exit_code": 0,
+  "syntax_diagnostic": "",
+  "missing_documented_paths": [],
+  "missing_requested_files": [
+    "paper/related_work_v10.tex"
+  ],
+  "portability_matches": [
+    {
+      "file": "code/ep_experiments/results_v3/common.py",
+      "line": 27
+    },
+    {
+      "file": "code/ep_experiments/results_v3/common.py",
+      "line": 46
+    },
+    {
+      "file": "code/ep_experiments/results_v3_EP6/build_input.py",
+      "line": 1
+    },
+    {
+      "file": "code/ep_experiments/results_v3_EP6/common.py",
+      "line": 46
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 403
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1601
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1605
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1609
+    },
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 390
+    },
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 430
+    },
+    {
+      "file": "results/EP6/deviations.csv",
+      "line": 9
+    }
+  ],
+  "credential_matches": [
+    {
+      "file": "paper/cas-common.sty",
+      "line": 187
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 220
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 227
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 327
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 349
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 383
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 384
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 386
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 403
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 404
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 431
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 445
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 471
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 842
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 843
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 844
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 856
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 857
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 858
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 870
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 871
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 872
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 884
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 885
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 886
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 916
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 931
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 945
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 947
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 963
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 968
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 973
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 978
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 983
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1306
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1316
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1323
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1352
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1362
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1370
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1596
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1601
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1605
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 1609
+    },
+    {
+      "file": "paper/cas-common.sty",
+      "line": 2477
+    }
+  ],
+  "unknown_dependency_versions": [],
+  "restricted_inputs_included": 0,
+  "raw_workbooks_included": 0,
+  "analysis_scripts_executed": 0,
+  "external_services_called": 0,
+  "portability_requested_pattern_matches": [
+    {
+      "file": "code/ep_experiments/results_v3/common.py",
+      "line": 27
+    },
+    {
+      "file": "code/ep_experiments/results_v3/common.py",
+      "line": 46
+    },
+    {
+      "file": "code/ep_experiments/results_v3_EP6/build_input.py",
+      "line": 1
+    },
+    {
+      "file": "code/ep_experiments/results_v3_EP6/common.py",
+      "line": 46
+    },
+    {
+      "file": "COPY_MANIFEST.json",
+      "line": 148
+    },
+    {
+      "file": "COPY_MANIFEST.json",
+      "line": 149
+    },
+    {
+      "file": "results/EP6/deviations.csv",
+      "line": 9
+    }
+  ],
+  "actual_machine_absolute_paths": [],
+  "reviewed_math_colon_false_positives": [
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 390
+    },
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 425
+    },
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 428
+    },
+    {
+      "file": "paper/paper_EU_v11.tex",
+      "line": 430
+    }
+  ],
+  "credential_matches_classification": "latex_macro_not_credential",
+  "credential_material_found": 0
+}

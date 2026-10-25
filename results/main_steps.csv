@@ -1,0 +1,4 @@
+tau_before,tau_after,delta_Q,delta_d,delta_d_lower,delta_d_upper,delta_d_greedy,selection,before_status,after_status,term,mode,mesh_step
+0.42,0.43,0.004700461070073901,-47.0,-47.0,-47.0,-37.0,largest_certified_step_global_drop_unverified,exact,exact,EP9,fixed,0.01
+0.42,0.44,0.011632284903965798,-76.0,-76.0,-76.0,-65.0,certified_global_drop,exact,exact,EP9,fixed,0.02
+0.4,0.45,0.0223553645239084,-135.0,-135.0,-135.0,-137.0,certified_global_drop,exact,exact,EP9,fixed,0.05
