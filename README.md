@@ -1,7 +1,7 @@
 # Beyond the Grand Coalition: Simplicial Heyting Semantics and Higher-Order Coalition Capacity in the European Parliament
 
 Author: Alireza Pourmoslemi; Department of Mathematics, Payame Noor University, Tehran, Iran.
-Version: 0.1.0. Release status: preparation draft; see MISSING.md.
+Version: v_1_3. Release status: preparation draft; see MISSING.md.
 Repository: https://github.com/pourmoslemy/EP-SC-Logic
 DOI: https://doi.org/10.5281/zenodo.23643385
 
