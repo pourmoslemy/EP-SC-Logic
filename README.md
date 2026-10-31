@@ -41,7 +41,7 @@ The raw VoteWatch Europe roll-call data used in this study are not redistributed
 
 - See MISSING.md and VERIFICATION.json. Individual corrected input is deliberately absent.
 - Depth timeout bounds depend on runtime hardware/scheduling. Bootstrap depth is approximate.
-- The manuscript availability sentence still claims corrected input is included; it requires an author edit before release.
+- corrected input is not redistributed
 - The manuscript has no separate supplied related-work file, and public-input reconstruction is not certified.
 - MIT licensing is provisional pending author confirmation; it does not grant rights to VoteWatch source data or third-party publisher assets.
 
